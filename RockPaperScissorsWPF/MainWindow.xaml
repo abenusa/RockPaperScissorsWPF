@@ -1,0 +1,76 @@
+﻿<Window x:Name="frmMain" x:Class="RockPaperScissorsWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RockPaperScissorsWPF"
+        mc:Ignorable="d"
+        Title="Rock Paper Scissors" Height="400" Width="350" Loaded="frmMain_Loaded">
+
+    <Border Padding="10">
+        <StackPanel>
+            <!-- Buttons -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Button Grid.Column="0" x:Name="btnRock" Content="Rock" Margin="0 0 10 0" MinHeight="40" Click="btnRock_Click"/>
+                <Button Grid.Column="1" x:Name="btnPaper" Content="Paper" Click="btnPaper_Click" />
+                <Button Grid.Column="2" x:Name="btnScissors" Content="Scissors" Margin="10 0 0 0" Click="btnScissors_Click" />        
+            </Grid>
+            
+            <!-- Play results -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                
+                <!-- Play result text -->
+                <StackPanel Grid.Column="0">
+                    <Label x:Name="lblHumanChose" Content="You Chose" Margin="0 30 0 0"/>
+                    <Label x:Name="lblComputerChose" Content="Computer Chose" />
+                    <Label x:Name="lblResult" Content="Result" />
+                </StackPanel>
+                
+                <!-- My choice image -->
+                <StackPanel Grid.Column="1">
+                    <Image x:Name="imgHumanChoice" Source="Resources/rock.png" />
+                    <Label Content="You" HorizontalAlignment="Center" FontWeight="Bold" />
+                </StackPanel>
+            </Grid>
+
+            <!-- More play results -->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Play result text -->
+                <StackPanel Grid.Column="0">
+                    <Label Content="Your Score" Margin="0 30 0 0"/>
+                    <Label Content="Computer Score" />
+                    <Label Content="Tie Score" />
+                </StackPanel>
+                
+                <!-- Play result values -->
+                <StackPanel Grid.Column="1">
+                    <TextBox x:Name="txtHumanScore" Margin="0 35 0 0" IsReadOnly="True"/>
+                    <TextBox x:Name="txtComputerScore" Margin="0 8 0 0" IsReadOnly="True" />
+                    <TextBox x:Name="txtTieScore" Margin="0 8 0 0" IsReadOnly="True" />
+                </StackPanel>
+
+                <!-- Computer choice image -->
+                <StackPanel Grid.Column="2">
+                    <Image x:Name="imgComputerChoice" Source="Resources/paper.png" />
+                    <Label Content="Computer" HorizontalAlignment="Center" FontWeight="Bold" />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>
