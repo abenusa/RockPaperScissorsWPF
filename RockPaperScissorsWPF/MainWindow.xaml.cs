@@ -7,6 +7,8 @@
 // project properties. Resources Images Add Existing File.
 // Set the Build Action for each file to "Resource".
 
+// 2020-09-16 Color changes to message.
+
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -112,13 +114,13 @@ namespace RockPaperScissorsWPF
                     (humanChoice == Selection.PAPER && computerChoice == Selection.ROCK) ||
                     (humanChoice == Selection.SCISSORS && computerChoice == Selection.PAPER))
                 {
-                    lblResult.Foreground = Brushes.DarkGreen;
+                    lblResult.Foreground = Brushes.Green;
                     lblResult.Content = "You Win!!!";
                     humanScore++;
                 }
                 else // Computer must have won if you reach this point.
                 {
-                    lblResult.Foreground = Brushes.Maroon;
+                    lblResult.Foreground = Brushes.DarkRed;
                     lblResult.Content = "Computer wins :-(";
                     computerScore++;
                 }
